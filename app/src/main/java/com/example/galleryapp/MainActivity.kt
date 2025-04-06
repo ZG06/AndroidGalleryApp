@@ -78,7 +78,7 @@ fun GalleryApp() {
             // Painting
             Image(
                 painter = painterResource(getResourceForPainting(paintingNumber)),
-                contentDescription = null,
+                contentDescription = null
             )
         }
         Spacer(modifier = Modifier.height(15.dp))
@@ -86,6 +86,8 @@ fun GalleryApp() {
             modifier = Modifier.padding(top = 15.dp),
             paintingNumber = paintingNumber
         )
+        // Moving the buttons to the bottom of the app
+        Spacer(modifier = Modifier.weight(1f))
         // 'Previous' and 'Next' buttons
         Row(
             modifier = Modifier.fillMaxWidth(),
@@ -224,7 +226,7 @@ fun getResourceForPaintingYear(paintingNumber: Int): Int {
     }
 }
 
-@Preview
+@Preview(showBackground = true)
 @Composable
 fun GalleryAppPreview() {
     // App preview
