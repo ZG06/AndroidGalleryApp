@@ -9,6 +9,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -39,24 +40,31 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
+
 private const val NO_OF_PAINTINGS = 5
 
 @Composable
 fun PaintingItem(
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    contentPadding: PaddingValues = PaddingValues(0.dp)
 ) {
     var paintingNumber by remember { mutableIntStateOf(1) }
     val context = LocalContext.current
 
     Column(
-        modifier = Modifier
-            .padding(40.dp)
+        modifier = modifier
+            .padding(
+                top = 60.dp,
+                bottom = 40.dp,
+                start = 40.dp,
+                end = 40.dp
+            )
             .verticalScroll(rememberScrollState()),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Painting(getDrawableResourceByNumber(
             paintingNumber = paintingNumber,
-            context = context
+            context = context,
         ))
         Spacer(modifier = Modifier.height(15.dp))
         PaintingDescriptionText(
@@ -120,11 +128,12 @@ fun Painting(
 ) {
     // Painting's background
     Surface(
-        modifier = Modifier
+        modifier = modifier
             .border(width = 25.dp, color = Color.White, shape = RectangleShape)
             .shadow(12.dp)
             .fillMaxWidth()
             .heightIn(min = 500.dp)
+            .padding(top = 30.dp)
     ) {
         // Painting
         Image(
