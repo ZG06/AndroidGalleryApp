@@ -15,4 +15,6 @@
     <string name="year_painted_3">(1931)</string>
     <string name="year_painted_4">(1889)</string>
     <string name="year_painted_5">(1888)</string>
+    <string name="previous_button">Previous</string>
+    <string name="next_button">Next</string>
 </resources>

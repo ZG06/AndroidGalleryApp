@@ -20,6 +20,7 @@ import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -103,7 +104,7 @@ fun PaintingItem(
                         paintingNumber--
                     }
                 },
-                buttonText = "Previous"
+                buttonText = stringResource(R.string.previous_button)
             )
             // 'Next' button
             ButtonsRow(
@@ -115,7 +116,7 @@ fun PaintingItem(
                         paintingNumber++
                     }
                 },
-                buttonText = "Next"
+                buttonText = stringResource(R.string.next_button)
             )
         }
     }
@@ -153,7 +154,7 @@ fun PaintingDescriptionText(
     Column(
         modifier = modifier
             .padding(bottom = 15.dp)
-            .background(color = Color(0xFFe4e6eb))
+            .background(MaterialTheme.colorScheme.tertiary)
             .fillMaxWidth(),
         horizontalAlignment = Alignment.Start,
     ) {

@@ -15,7 +15,6 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -62,11 +61,11 @@ fun GalleryAppTopBar(modifier: Modifier = Modifier) {
             Text(
                 text = stringResource(R.string.app_name),
                 style = MaterialTheme.typography.displayLarge,
-                color = Color(0xFFffffff)
+                color = MaterialTheme.colorScheme.onSecondary
             )
         },
         colors = TopAppBarDefaults.topAppBarColors(
-            containerColor = Color(0xFF44474e)
+            containerColor = MaterialTheme.colorScheme.secondary
         ),
         expandedHeight = 50.dp,
         modifier = modifier
