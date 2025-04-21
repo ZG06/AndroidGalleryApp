@@ -42,7 +42,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 
-private const val NO_OF_PAINTINGS = 5
+private const val NO_OF_PAINTINGS = 10
 
 @Composable
 fun PaintingItem(
@@ -72,17 +72,17 @@ fun PaintingItem(
             modifier = Modifier.padding(top = 15.dp),
             paintingDescription = getStringResourceByNumber(
                 resource = "painting_description",
-                paintingNumber = 1,
+                paintingNumber = paintingNumber,
                 context = context
             ),
             paintingName = getStringResourceByNumber(
                 resource = "painter_name",
-                paintingNumber = 1,
+                paintingNumber = paintingNumber,
                 context = context
             ),
             paintingYear = getStringResourceByNumber(
                 resource = "year_painted",
-                paintingNumber = 1,
+                paintingNumber = paintingNumber,
                 context = context
             ),
         )
